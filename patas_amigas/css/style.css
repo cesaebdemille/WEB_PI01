@@ -1,0 +1,273 @@
+/* AUX
+https://www.w3schools.com/tags/ref_pxtoemconversion.asp */
+
+/*  [xxx] KEYWORD opcional
+    <xxx> VALOR obrigatorio
+    [<xxx> [<yyyy>]] yyy só se x
+    {X} exactamente X vezes 
+    | e &&*/
+
+/* Base - Arial, texto #1d1148, fundo #f7f7f9, line-height 1.6 */
+
+
+
+body{
+    font-family: arial, sans-serif;
+    color: #1d1148;
+    background:  #f7f7f9;
+    line-height: 1.6em;
+    margin: 0;
+    
+}
+
+section {
+    padding: 1em 0;
+}
+
+/* Contentor - max-width 1000px, margin 0 auto */
+main {
+    margin: 0 auto;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto; 
+    
+}
+
+/*Cabeçalho - fundo branco, logótipo à esquerda (Amigas #e40084), menu à direita com flexbox */
+header {
+    background: white;
+    padding: 1.2em 0;
+}
+
+header .container {
+    display: flex;
+    /* flex-wrap: wrap; | aqui refere-se a ambos logo e ul */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /*logos e menu */
+    gap: 1em;
+}
+
+.logo{
+    color: inherit;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span{
+    color: #e40084;
+}
+
+nav ul {
+    /*flex nos filhos*/
+   display: flex;
+    flex-wrap: wrap;
+    gap: 0.2em 1.6em;
+    /*not text-deco para os bullets, but list ---X- list-style-type: disc */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul a:hover {
+    color: #b8006a;
+}
+
+/* Destaque - fundo #1d1148, texto branco e centrado, botão #e40084 */
+
+#hero{
+    background: #1d1148;
+    color: white;
+    text-align: center;
+    padding: 4em 0;
+}
+
+h1 {
+    line-height: 1.1;
+}
+
+#hero p{
+    max-width: 30em;
+    margin: 0 auto 2em;
+    text-wrap: pretty;
+    /* alter text-wrap: pretty | balance | nao encontro anti-runts */
+}
+
+#hero a {
+    /* por natureza inline. inline nao aceita padding como block. inline-block acompanha o texto */
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    background-color: #e40084;
+    padding: 0.75em 1.5em;
+    border-radius: 2em;
+}
+
+/*  5. Cartões - 300px, box-sizing, padding 16px, borda 3px #1d1148, radius 20px, sombra, flex com gap 24px */
+.cartoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8em;
+    justify-content: center;
+    
+    
+}
+
+.cartoes article {
+    box-sizing: border-box; /* use preview bounds */
+    width: 18.75em; 
+    max-width: 100%;
+    padding: 1em;
+    border: 0.1875em solid #1d1148;
+    padding: 1em;
+    border-radius: 1.25em;
+    box-shadow: 0 0.15em 0.2em rgba(0, 0, 0, 15%);
+    background: white;
+    text-align: center;
+    position: relative;
+}
+
+.cartoes img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.75em;
+}
+
+.selo {
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
+    background: #e40084;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 0.25em 0.8em;
+    border-radius: 2em;
+}
+
+/* Como adotar - lista numerada */
+/* marker shape | list-style-type | disc, circle, square, decimal, none
+Where marker sits | list-style-position | outside (default), inside
+image as marker | list-style-image | url(...), none
+list-style | all 3 in sequence | any combo ex. list-style: square inside; */
+
+#adotar ol {
+    padding: 0; /*numeros ficam outside.*/
+    list-style: decimal inside; /* no shape, outside box */
+    /* padding-inline-start: 0px  ---> L-R */
+}
+
+#adotar li {
+    padding: 0.35em 0; /* blocks, not p */
+}
+
+
+
+/*Tabela - max-width 500px, cabeçalho #1d1148, células com borda 1px */
+
+#visitas table{
+    max-width: 31.25em;
+    /* por defeito so tem largura do conteudo, que ]e inferior a max-width */
+    width: 100%;
+    border-collapse: collapse;
+    /* por defeito cada celula contribui */
+    background: white;
+    
+}
+
+#visitas th {
+    background: #1d1148;
+    color: white;
+    text-align: left;
+}
+
+#visitas th, td {
+    border: 0.0625em solid #e3e3ea;
+    padding: 0.75em 1em;
+    
+}
+
+/* Formulário - fundo branco, cantos arredondados, campos com largura toda */
+
+#contacto form {
+    background: white;
+    border-radius: 1.25em;
+    padding: 1.5em;
+    max-width: 31.25em;
+    box-shadow: 0 0.15em 0.2em rgba(0, 0, 0, 15%);
+    /* box-shadow: [inset - interior] <offset-x> <offset-y> [<blur-radius> [<spread-radius> pos/negativ]] [<color + transp>]; */
+
+}
+
+#contacto label{
+    /* default inline */
+    display: block;
+    font-weight: bold;
+    margin: 1em 0 0.35em;
+}
+
+#contacto input, select, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.6em;
+    border: 0.0625em solid #c9c9d6;
+    border-radius: 0.5em;
+}
+
+#contacto textarea {
+    min-height: 6em;
+}
+
+
+
+
+#contacto button{
+    /*anular os settings default*/
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    background: #e40084;
+    border: none;
+    border-radius: 6em;
+    margin-top: 1em;
+    padding: 0.55em 2em;
+    text-decoration: none;
+
+}
+
+#contacto button:hover, #hero a:hover {
+    background: #b8006a;
+}
+
+
+
+/* Rodapé - fundo #1d1148, texto branco e centrado */
+
+footer {
+    background-color: #1d1148;
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+    margin: 3em 0 auto;
+
+    
+}
+
+
+footer p{
+    font-size: 90%;
+    margin: 0;
+    
+}
+
+
+/* TODO: 12. Desafio 3 - flex-wrap no menu e nos cartões, sem scroll horizontal */
